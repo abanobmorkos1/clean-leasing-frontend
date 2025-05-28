@@ -1,0 +1,88 @@
+.tabs {
+  background: var(--card-bg, #ffffff);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tabs__header {
+  display: flex;
+  background: var(--header-bg, #f8f9fa);
+  border-bottom: 1px solid var(--border-color, #e1e5e9);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tabs__header::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary, #6c757d);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+  min-width: fit-content;
+}
+
+.tabs__button:hover {
+  background: var(--hover-bg, #e9ecef);
+  color: var(--text-primary, #333);
+}
+
+.tabs__button--active {
+  color: var(--primary, #007bff);
+  background: var(--card-bg, #ffffff);
+}
+
+.tabs__button--active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary, #007bff);
+}
+
+.tabs__icon {
+  font-size: 1rem;
+}
+
+.tabs__count {
+  background: var(--primary, #007bff);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.tabs__button--active .tabs__count {
+  background: var(--primary-dark, #0056b3);
+}
+
+.tabs__content {
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .tabs__button {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .tabs__content {
+    padding: 1rem;
+  }
+}
